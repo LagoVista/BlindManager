@@ -1,0 +1,66 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LagoVista.ManCaveController"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ctl="using:LagoVista.Common.UI.Controls"
+    DataContext="{StaticResource BlindsViewModel}"
+    x:Class="LagoVista.ManCaveController.MainPage"
+    mc:Ignorable="d">
+
+    <Grid Background="#336699">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+            <Image Source="/Assets/Blinds512.png" Height="92" Width="92" Margin="0,0,15,0"/>
+            <TextBlock Text="Blind Controller" Foreground="White"  FontSize="92"/>
+        </StackPanel>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200" />
+                <RowDefinition Height="200" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*" />
+                <ColumnDefinition Width="20*" />
+                <ColumnDefinition Width="20*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.Resources>
+                <Style TargetType="StackPanel">
+                    <Setter Property="Margin" Value="10" />
+                </Style>
+                <Style TargetType="ctl:TapableImage" >
+                    <Setter Property="Width" Value="64" />
+                    <Setter Property="Height" Value="64" />
+                    <Setter Property="Margin" Value="10" />
+                </Style>
+            </Grid.Resources>
+            <Border BorderThickness="5" BorderBrush="White" Grid.ColumnSpan="3" Grid.RowSpan="2" />
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <ctl:TapableImage Source="/Assets/BlindDown.png"  TapDownCommand="{Binding BlindActionCommand}"  TapDownCommandParameter="5.down"  />
+                <ctl:TapableImage Source="/Assets/BlindStop.png" TapDownCommand="{Binding BlindActionCommand}" TapDownCommandParameter="5.stop" />
+                <ctl:TapableImage Source="/Assets/BlindUp.png" TapDownCommand="{Binding BlindActionCommand}" TapDownCommandParameter="5.up" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <ctl:TapableImage Source="/Assets/BlindDown.png"  TapDownCommand="{Binding BlindActionCommand}" TapDownCommandParameter="4.down"/>
+                <ctl:TapableImage Source="/Assets/BlindStop.png" TapDownCommand="{Binding BlindActionCommand}" TapDownCommandParameter="4.stop" />
+                <ctl:TapableImage Source="/Assets/BlindUp.png" TapDownCommand="{Binding BlindActionCommand}" TapDownCommandParameter="4.up" />
+            </StackPanel>
+            <StackPanel Grid.Column="1"  Orientation="Horizontal">
+                <ctl:TapableImage Source="/Assets/BlindDown.png"  TapDownCommand="{Binding BlindActionCommand}" TapDownCommandParameter="3.down" />
+                <ctl:TapableImage Source="/Assets/BlindStop.png" TapDownCommand="{Binding BlindActionCommand}" TapDownCommandParameter="3.stop" />                
+                <ctl:TapableImage Source="/Assets/BlindUp.png" TapDownCommand="{Binding BlindActionCommand}" TapDownCommandParameter="3.up"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2"  Orientation="Horizontal">
+                <ctl:TapableImage Source="/Assets/BlindDown.png"  TapDownCommand="{Binding BlindActionCommand}" TapDownCommandParameter="2.down"  />
+                <ctl:TapableImage Source="/Assets/BlindStop.png" TapDownCommand="{Binding BlindActionCommand}" TapDownCommandParameter="2.stop" />                
+                <ctl:TapableImage Source="/Assets/BlindUp.png"  TapDownCommand="{Binding BlindActionCommand}" TapDownCommandParameter="2.up"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Grid.Row="1"  Orientation="Horizontal">
+                <ctl:TapableImage Source="/Assets/BlindDown.png" TapDownCommand="{Binding BlindActionCommand}" TapDownCommandParameter="1.down"  />
+                <ctl:TapableImage Source="/Assets/BlindStop.png" TapDownCommand="{Binding BlindActionCommand}" TapDownCommandParameter="1.stop" />
+                <ctl:TapableImage Source="/Assets/BlindUp.png" TapDownCommand="{Binding BlindActionCommand}" TapDownCommandParameter="1.up" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
